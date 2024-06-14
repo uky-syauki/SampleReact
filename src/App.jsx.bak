@@ -1,0 +1,40 @@
+import { useState } from 'react';
+import './App.css';
+
+const FormLogin = () => {
+  return (
+    <>
+      <h1>LOGIN PAGE</h1>
+      <input type="email" placeholder='Email' />
+      <br />
+      <input type="password" placeholder='Password' />
+      <br />
+      <button type='submit'>LOGIN</button><button type='reset'>reset</button>
+    </>
+  )
+}
+
+const Salam = () => {
+  const [nama, setNama] = useState('');
+
+  return (
+    <>
+      <input type="text" id='nama' onChange={e => setNama(e.target.value)} />
+      <br />
+      <p>{nama}</p>
+      <button type='button' onClick={() => alert(`hi ${nama}, good night!`)}>Salam</button>
+    </>
+  )
+}
+
+function App() {
+  return (
+    <>
+      <h1>form login</h1>
+      <FormLogin email={'fauzan.azharirahman04@gmail.com'} password={'1233'}/><br /><br />
+      <Salam />
+    </>
+  )
+}
+
+export default App;
